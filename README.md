@@ -1,6 +1,6 @@
 # PEU 85 Anos · Jantar de Celebração
 
-Site do jantar de celebração dos 85 anos da PEU (19 de novembro de 2026). Reúne em uma única página o cardápio do jantar, o cardápio de drinks do bartender, as sobremesas (bolo folhado de morango, mousse de chocolate e Picolés Bids), as atrações (sinuca, pebolim e plataforma 360°) e um formulário de confirmação de presença.
+Site do jantar de celebração dos 85 anos da PEU (19 de novembro de 2026). Reúne em uma única página o cardápio do jantar, o cardápio de drinks do bartender, as sobremesas (bolo folhado de morango, bolo mousse de chocolate e Picolés Bids de chocolate, leite condensado, limao, uva e abacaxi, as atrações (sinuca, pebolim e plataforma 360°).
 
 ## Tecnologias
 
