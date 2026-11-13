@@ -6,9 +6,9 @@ import { NotFoundPage } from '@/components/error-pages'
 
 import '../styles.css'
 
-const siteName = 'PEU 85 Anos · Jantar de Celebração'
+const siteName = 'PEU · Confraternização 85 anos'
 const siteDescription =
-  'Jantar de celebração dos 85 anos da PEU em 19/11/2026: cardápio, drinks, sobremesas, diversão e confirmação de presença.'
+  'Confraternização 85 anos da PEU em 19/11/2026: cardápio, drinks, sobremesas e diversão.'
 
 export const Route = createRootRoute({
   head: () => ({

@@ -5,10 +5,11 @@ export const img = (file: string, w: number) =>
 
 export const evento = {
   nome: 'PEU 85 Anos',
-  titulo: 'Jantar de Celebração',
+  titulo: 'Confraternização',
+  subtitulo: '85 anos',
   slogan: 'Energizando o Futuro',
   data: '19 de novembro de 2026',
-  duracao: '5 horas de festa',
+  horario: 'A partir das 17h30',
 }
 
 export const cardapio = [
@@ -40,6 +41,8 @@ export const bar = [
   { titulo: 'Sodas italianas', itens: ['Maçã verde', 'Frutas vermelhas'] },
 ]
 
+export const chope = { nome: 'Chope', desc: 'Cevada Pura' }
+
 export const monteSeuDrink = {
   frutas: ['Morango', 'Limão', 'Laranja', 'Limão siciliano', 'Abacaxi', 'Maracujá'],
   complementos: ['Hortelã', 'Leite condensado', 'Rúcula', 'Grenadine', 'Açúcar'],
@@ -49,34 +52,21 @@ export const sobremesas = [
   {
     nome: 'Bolo folhado de morango',
     desc: 'Camadas crocantes de massa folhada, creme suave e morangos frescos.',
-    imagem: 'bolo-folhado-morango.png',
   },
   {
-    nome: 'Mousse de chocolate',
-    desc: 'Aerada, intensa e finalizada com raspas de chocolate.',
-    imagem: 'mousse-chocolate.png',
+    nome: 'Bolo de mousse de chocolate',
+    desc: 'Camadas de mousse aerada e intensa, finalizadas com raspas de chocolate.',
   },
   {
     nome: 'Picolés Bids',
-    desc: 'Sabores variados para refrescar a noite.',
-    imagem: 'picoles.png',
+    desc: 'Chocolate, leite condensado, limão, uva e abacaxi.',
   },
 ]
 
 export const atracoes = [
-  {
-    nome: 'Sinuca',
-    desc: 'Mesa liberada a noite toda para desafiar os colegas.',
-    imagem: 'sinuca.png',
-  },
-  {
-    nome: 'Pebolim',
-    desc: 'Monte seu time e dispute partidas rápidas e animadas.',
-    imagem: 'pebolin.png',
-  },
-  {
-    nome: 'Plataforma 360°',
-    desc: 'Grave vídeos em 360° e registre os melhores momentos da festa.',
-    imagem: 'plataforma-360.png',
-  },
+  { nome: 'Sinuca' },
+  { nome: 'Pebolim' },
+  { nome: 'Plataforma 360°' },
+  { nome: 'Sorteio de brindes' },
+  { nome: 'Homenagem por tempo de casa' },
 ]
