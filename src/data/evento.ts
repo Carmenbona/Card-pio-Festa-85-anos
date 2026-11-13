@@ -64,6 +64,7 @@ export const sobremesas = [
 ]
 
 export const atracoes = [
+  { nome: 'Cantor e DJ Geninho' },
   { nome: 'Sinuca' },
   { nome: 'Pebolim' },
   { nome: 'Plataforma 360°' },
