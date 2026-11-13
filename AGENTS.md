@@ -4,13 +4,11 @@ This document describes the project for developers and AI agents working on this
 
 ## Project Overview
 
-Single-page event site (pt-BR) for the PEU 85th anniversary dinner on 19/11/2026: dinner menu, drinks menu, desserts, entertainment, and an RSVP form.
+Single-page event site (pt-BR) for the PEU 85th anniversary dinner on 19/11/2026: dinner menu, drinks menu, desserts, and entertainment (no RSVP form).
 
-- `src/routes/index.tsx` — the whole page (hero, Jantar, Drinks, Sobremesas, Diversão, Confirmação).
+- `src/routes/index.tsx` — the whole page (hero, Jantar, Drinks, Sobremesas, Diversão). Dessert and attraction cards are text-only (no photos).
 - `src/data/evento.ts` — all event copy/menus and the `img()` helper that builds Netlify Image CDN URLs. Edit content here, not in the route.
-- `src/components/ConfirmacaoForm.tsx` — RSVP form submitted via AJAX to Netlify Forms.
-- `public/confirmacao-form.html` — static registration of the `confirmacao` form. Field names MUST match the React form; the component POSTs to this file (not `/`, which SSR handles).
-- `public/img/` — cover art (supplied by the client) and AI-generated dessert/entertainment photos. Always reference via `img(file, width)`.
+- `public/img/` — cover art supplied by the client. Always reference via `img(file, width)`.
 - Theme: dark navy `--navy` + glowing blue `--glow` (matches the PEU 85 cover), fonts Sora/Manrope from Google Fonts; `.glass` card style in `src/styles.css`.
 - Supplier pricing from the buffet quote is intentionally not shown on the site.
 

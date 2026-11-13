@@ -1,8 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { CalendarDays, Clock, GlassWater, IceCreamCone, PartyPopper, Sparkles, UtensilsCrossed } from 'lucide-react'
 
-import { ConfirmacaoForm } from '@/components/ConfirmacaoForm'
-import { atracoes, bar, cardapio, coqueteis, evento, img, monteSeuDrink, sobremesas } from '@/data/evento'
+import { atracoes, bar, chope, cardapio, coqueteis, evento, img, monteSeuDrink, sobremesas } from '@/data/evento'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -31,24 +30,13 @@ function Home() {
     <div className="min-h-screen overflow-x-hidden bg-[var(--navy)] text-white">
       {/* Navegação */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[var(--navy)]/70 backdrop-blur-lg">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="#" className="font-heading text-lg font-extrabold tracking-tight">
-            PEU <span className="text-[var(--glow)]">85</span>
-          </a>
-          <nav className="hidden gap-8 text-sm text-white/70 md:flex">
-            {nav.map((n) => (
-              <a key={n.href} href={n.href} className="transition hover:text-white">
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <a
-            href="#confirmar"
-            className="rounded-full border border-[var(--glow)]/60 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--glow)] hover:text-[var(--navy)]"
-          >
-            Confirmar presença
-          </a>
-        </div>
+        <nav className="mx-auto flex max-w-6xl items-center justify-center gap-5 px-5 py-4 text-sm text-white/70 sm:gap-8">
+          {nav.map((n) => (
+            <a key={n.href} href={n.href} className="transition hover:text-white">
+              {n.label}
+            </a>
+          ))}
+        </nav>
       </header>
 
       {/* Hero */}
@@ -63,25 +51,19 @@ function Home() {
         <div className="relative mx-auto -mt-6 max-w-3xl px-5 pb-20 text-center md:-mt-10">
           <h1 className="font-heading text-4xl font-bold tracking-tight md:text-6xl">
             {evento.titulo}
+            <span className="block">{evento.subtitulo}</span>
           </h1>
           <p className="mt-5 text-lg text-white/70 md:text-xl">
-            Uma noite para celebrar 85 anos de história com jantar completo, bar de drinks, sobremesas
-            irresistíveis e muita diversão.
+            Uma noite para celebrar.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 text-sm">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
               <CalendarDays className="size-4 text-[var(--glow)]" /> {evento.data}
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              <Clock className="size-4 text-[var(--glow)]" /> {evento.duracao}
+              <Clock className="size-4 text-[var(--glow)]" /> {evento.horario}
             </span>
           </div>
-          <a
-            href="#confirmar"
-            className="mt-10 inline-flex rounded-full bg-[var(--glow)] px-8 py-4 font-semibold text-[var(--navy)] shadow-[0_0_50px_-5px_var(--glow)] transition hover:brightness-110"
-          >
-            Confirmar minha presença
-          </a>
         </div>
       </section>
 
@@ -111,6 +93,10 @@ function Home() {
       <section id="drinks" className="scroll-mt-20 px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionTitle eyebrow="Bartender" title="Cardápio de drinks" icon={GlassWater} />
+          <div className="glass mb-5 rounded-2xl p-7 text-center">
+            <h3 className="font-heading text-2xl font-bold">{chope.nome}</h3>
+            <p className="mt-2 text-white/70">{chope.desc}</p>
+          </div>
           <div className="grid gap-5 md:grid-cols-3">
             {coqueteis.map((c) => (
               <div key={c.nome} className="glass rounded-2xl p-7 text-center">
@@ -160,7 +146,7 @@ function Home() {
           <SectionTitle eyebrow="Para adoçar a noite" title="Sobremesas" icon={IceCreamCone} />
           <div className="grid gap-6 md:grid-cols-3">
             {sobremesas.map((s) => (
-              <PhotoCard key={s.nome} {...s} />
+              <InfoCard key={s.nome} nome={s.nome} desc={s.desc} />
             ))}
           </div>
         </div>
@@ -170,20 +156,12 @@ function Home() {
       <section id="diversao" className="scroll-mt-20 px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionTitle eyebrow="Entretenimento" title="Diversão garantida" icon={PartyPopper} />
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-6">
             {atracoes.map((a) => (
-              <PhotoCard key={a.nome} {...a} />
+              <div key={a.nome} className="w-full md:w-[calc((100%-3rem)/3)]">
+                <InfoCard nome={a.nome} />
+              </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Confirmação */}
-      <section id="confirmar" className="scroll-mt-20 px-5 py-24">
-        <div className="mx-auto max-w-2xl">
-          <SectionTitle eyebrow="RSVP" title="Confirme sua presença" icon={Sparkles} />
-          <div className="glass rounded-3xl p-6 md:p-10">
-            <ConfirmacaoForm />
           </div>
         </div>
       </section>
@@ -192,29 +170,19 @@ function Home() {
         <p className="font-heading font-semibold text-white/70">
           {evento.nome} · {evento.slogan}
         </p>
-        <p className="mt-1">{evento.data}</p>
+        <p className="mt-1">
+          {evento.data} · {evento.horario}
+        </p>
       </footer>
     </div>
   )
 }
 
-function PhotoCard({ nome, desc, imagem }: { nome: string; desc: string; imagem: string }) {
+function InfoCard({ nome, desc }: { nome: string; desc?: string }) {
   return (
-    <article className="group glass overflow-hidden rounded-3xl">
-      <div className="aspect-[4/3] overflow-hidden">
-        <img
-          src={img(imagem, 800)}
-          srcSet={`${img(imagem, 500)} 500w, ${img(imagem, 800)} 800w`}
-          sizes="(min-width: 768px) 33vw, 100vw"
-          alt={nome}
-          loading="lazy"
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-        />
-      </div>
-      <div className="p-6">
-        <h3 className="font-heading text-xl font-bold">{nome}</h3>
-        <p className="mt-2 text-white/70">{desc}</p>
-      </div>
+    <article className="glass flex h-full flex-col justify-center rounded-3xl p-8 text-center">
+      <h3 className="font-heading text-xl font-bold">{nome}</h3>
+      {desc && <p className="mt-2 text-white/70">{desc}</p>}
     </article>
   )
 }
