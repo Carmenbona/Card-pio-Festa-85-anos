@@ -6,7 +6,7 @@ import { NotFoundPage } from '@/components/error-pages'
 
 import '../styles.css'
 
-const siteName = 'PEU · Confraternização 85 anos'
+const siteName = 'PEU 85 anos · Uma noite para celebrar'
 const siteDescription =
   'Confraternização 85 anos da PEU em 19/11/2026: cardápio, drinks, sobremesas e diversão.'
 
