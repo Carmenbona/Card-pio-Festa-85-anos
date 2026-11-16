@@ -5,8 +5,7 @@ export const img = (file: string, w: number) =>
 
 export const evento = {
   nome: 'PEU 85 Anos',
-  titulo: 'Confraternização',
-  subtitulo: '85 anos',
+  titulo: 'Uma noite para celebrar',
   slogan: 'Energizando o Futuro',
   data: '19 de novembro de 2026',
   horario: 'A partir das 17h30',
@@ -29,7 +28,8 @@ export const cardapio = [
   },
 ]
 
-export const coqueteis = [
+export const coqueteis: { nome: string; desc: string; selo?: string }[] = [
+  { nome: 'Drink PEU 220 Volts', desc: 'Vodka, curaçau blue e suco de limão', selo: 'Drink da casa' },
   { nome: 'Mojito', desc: 'Rum, suco de limão fresco, hortelã e água com gás' },
   { nome: 'Espanhola', desc: 'Vinho tinto, abacaxi e leite condensado' },
   { nome: 'Sex on the Beach', desc: 'Vodka, suco de pêssego, suco de laranja e xarope de grenadine' },

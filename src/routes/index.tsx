@@ -51,11 +51,7 @@ function Home() {
         <div className="relative mx-auto -mt-6 max-w-3xl px-5 pb-20 text-center md:-mt-10">
           <h1 className="font-heading text-4xl font-bold tracking-tight md:text-6xl">
             {evento.titulo}
-            <span className="block">{evento.subtitulo}</span>
           </h1>
-          <p className="mt-5 text-lg text-white/70 md:text-xl">
-            Uma noite para celebrar.
-          </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 text-sm">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
               <CalendarDays className="size-4 text-[var(--glow)]" /> {evento.data}
@@ -97,10 +93,10 @@ function Home() {
             <h3 className="font-heading text-2xl font-bold">{chope.nome}</h3>
             <p className="mt-2 text-white/70">{chope.desc}</p>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {coqueteis.map((c) => (
               <div key={c.nome} className="glass rounded-2xl p-7 text-center">
-                <p className="text-xs uppercase tracking-[0.25em] text-white/50">Coquetel clássico</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-white/50">{c.selo ?? 'Coquetel clássico'}</p>
                 <h3 className="font-heading mt-2 text-2xl font-bold">{c.nome}</h3>
                 <p className="mt-3 text-white/70">{c.desc}</p>
               </div>
